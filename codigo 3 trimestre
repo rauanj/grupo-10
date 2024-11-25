@@ -1,0 +1,91 @@
+//Os farofeiros,Comedia, 12 anos
+//Todos menos voce, Comedia, 16 anos
+//Intocaveis, Comedia, 14 anos
+//O lobo de wall street, Comedia, 18 anos
+//Ate que a sorte nos separe, Comedia, 10 anos
+//Dungeon e dragons, Fantasia, 12 anos
+//As cronicas de Narnia, Fantasia, 10 anos
+//A forma da agua, Fantasia, 16 anos
+//Senhor dos aneis, Fantasia, 14 anos 
+//O labirinto do fauno, Fantasia, 18 anos
+//A festa das salsicha, Animacao , 18 anos
+//Coroline, Animacao, 10 anos
+//Kimi no wa, Animacao, 12 anos
+//Perdi meu corpo, Animacao, 16 anos
+//Akira, Animacao, 14 anos
+let campoIdade;
+let campoComedia;
+let campoFantasia;
+let campoAnimacao;
+function setup () {
+createCanvas(800, 400);
+  createElement("h2","Recomendador de filmes");
+  createSpan("Nos diga sua idade e o gênero do filme que deseja assistir:");
+  campoIdade = createInput(" ");
+  campoIdade.attribute('type','number'); // Garantir que o input seja numérico
+  campoComedia = createCheckbox("Gosta de Comedia?");
+  campoFantasia = createCheckbox("Gosta de Fantasia?");
+  campoAnimacao = createCheckbox("Gosta de Animacao?");
+  }
+function draw() {
+  background(76, 0, 115); // Preencher o fundo com a cor roxa
+  let idade = int(campoIdade.value());
+  let gostaDeComedia = campoComedia.checked();
+  let gostaDeFantasia = campoFantasia.checked();
+  let gostaDeAnimacao = campoAnimacao.checked();
+  let recomendacao = geraRecomendacao(idade, gostaDeComedia, gostaDeFantasia, gostaDeAnimacao)
+ fill(color(255, 255, 255));
+  textAlign(CENTER, CENTER);
+  textSize(24);
+  text(recomendacao, width / 2, height / 2);
+  }
+function geraRecomendacao(idade, gostaDeComedia, gostaDeFantasia, gostaDeAnimacao) {
+  let filmesComedia = ["Ate que a sorte nos separe", "Os farofeiros", "Intocaveis", "Todos menos voce", "O lobo de wall street"];
+  let filmesFantaia = ["As cronicas de Narnia","Dungeon e dragons","Senhor dos aneis","A forma da agua","O labirinto do fauno"];
+  let filmesAnimacao = ["Coroline", "Kimi no wa", "Akira", "Perdi meu corpo", "A festa das salsicha"];
+  if (idade >= 18) {
+if (gostaDeComedia) {
+return filmesComedia[4];
+} else if (gostaDeFantasia) {
+return filmesFantasia[4];
+} else if (gostaDeAnimacao) {
+return filmesAnimacao[4];
+}
+} else if (idade >= 16) {
+if (gostaDeComedia) {
+return filmesComedia[3];
+} else if (gostaDeFantasia) {
+return filmesFantasia[3];
+} else if (gostaDeAnimacao) {
+return filmesAnimacao[3];
+}
+} else if (idade >= 14) {
+if (gostaDeComedia) {
+return filmesComedia[2];
+} else if (gostaDeFantasia) {
+return filmesFantasia[2];
+} else if (gostaDeAnimacao) {
+return filmesAnimacao[2];
+}
+  } else if (idade >= 12) {
+if (gostaDeComedia) {
+return filmesComedia[1];
+} else if (gostaDeFantasia) {
+return filmesFantasia[1];
+} else if (gostaDeAnimacao) {
+return filmesAnimacao[1];
+}
+} else if (idade >= 10) {
+if (gostaDeComedia) {
+return filmesComedia[0];
+} else if (gostaDeFantasia) {
+return filmesFantasia[0];
+} else if (gostaDeAnimacao) {
+return filmesAnimacao[0];
+}
+  }
+return "Escolha um gênero de filme!";
+}
+
+
+link; https://editor.p5js.org/rauan.constantino.santos/sketches/dzwW9NpBt
